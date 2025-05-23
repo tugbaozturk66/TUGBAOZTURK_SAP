@@ -1,9 +1,9 @@
 *&---------------------------------------------------------------------*
-*& Report ZTO_SAP04_0050
+*& Report ZTO_SAP04_047
 *&---------------------------------------------------------------------*
 *&
 *&---------------------------------------------------------------------*
-REPORT ZTO_SAP04_0050.
+REPORT ZTO_SAP04_047.
 "Alternatif.
 
 *DATA: BEGIN OF gs_structure,
@@ -130,7 +130,7 @@ APPEND gs_structure TO gt_table.
 CLEAR: gs_structure.
 
 gs_structure-id      = 12353.
-gs_structure-name    = 'Yasemin'.
+gs_structure-name    = 'Merve'.
 gs_structure-surname = 'Öztürk'.
 gs_structure-job     = 'Engineer'.
 gs_structure-salary  = 3500.
@@ -142,7 +142,7 @@ APPEND gs_structure TO gt_table.
 CLEAR: gs_structure.
 
 gs_structure-id      = 12354.
-gs_structure-name    = 'Yakup'.
+gs_structure-name    = 'Merve'.
 gs_structure-surname = 'Öztürk'.
 gs_structure-job     = 'Engineer'.
 gs_structure-salary  = 7000.
@@ -153,65 +153,19 @@ gs_structure-e_mail  = 'muratozturk@gmail.com'.
 APPEND gs_structure TO gt_table.
 CLEAR: gs_structure.
 
-READ TABLE gt_table into gs_structure INDEX 8.
+LOOP AT gt_table INTO gs_structure.
 
-IF sy-subrc IS INITIAL.
-  WRITE: gs_structure-id, gs_structure-name, gs_structure-salary.
+  IF gs_structure-id >= 12351.
+    EXIT.
+  ENDIF.
 
-  ADD 500 TO gs_structure-salary.
+  WRITE: sy-tabix,
+         gs_structure-id,
+         gs_structure-name.
 
-*  gs_structure-salary = gs_structure-salary + 500.
+  SKIP.
 
-  MODIFY gt_table FROM gs_structure INDEX 8.
+ENDLOOP.
 
-  CLEAR: gs_structure.
-
-ENDIF.
-
-
-READ TABLE gt_table into gs_structure INDEX 8.
-
-IF sy-subrc IS INITIAL.
-
-  WRITE: / gs_structure-id, gs_structure-name, gs_structure-salary.
-ENDIF.
-
-**LOOP AT gt_table INTO gs_structure.
-**
-**  ADD 500 TO gs_structure-salary.
-**
-**  MODIFY gt_table FROM gs_structure INDEX sy-tabix.
-**
-**  WRITE: sy-tabix, gs_structure-id, gs_structure-name, gs_structure-salary.
-**
-**  SKIP.
-**
-**  CLEAR: gs_structure.
-**
-**ENDLOOP.
-*
-*LOOP AT gt_table INTO gs_structure.
-*
-*  ADD 500 TO gs_structure-salary.
-*
-*  MODIFY gt_table FROM gs_structure TRANSPORTING salary WHERE id = gs_structure-id. "UPDATE ISLEMI
-*
-*  WRITE: sy-tabix, gs_structure-id, gs_structure-name, gs_structure-salary.
-*
-*  SKIP.
-*
-*  CLEAR: gs_structure.
-*
-*ENDLOOP.
-*
-*
-*DELETE gt_table INDEX 8.
-*DELETE gt_table INDEX 6.
-*DELETE gt_table INDEX 4.
-*DELETE gt_table INDEX 20.
-*
-*DELETE gt_table WHERE name = 'Yasemin'.
-*
-*
 
 BREAK-POINT.
