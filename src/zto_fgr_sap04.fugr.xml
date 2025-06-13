@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Text Funktion Group.</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZTO_FGR_SAP04TOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZTO_FGR_SAP04</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_001</FUNCNAME>
+     <SHORT_TEXT>fonsiyon modulu</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_NUMBER_1</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_NUMBER_2</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_NUMBER_1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_NUMBER_2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_02</FUNCNAME>
+     <SHORT_TEXT>example 2</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_NUMBER_1</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_NUMBER_2</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_NUMBER_1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_NUMBER_2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_03</FUNCNAME>
+     <SHORT_TEXT>example</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_TEXT_1</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR40</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_TEXT_2</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR40</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_UPPERCASE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_TEXT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR80</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_TEXT_1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Character field of length 40</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_TEXT_2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Character field of length 40</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_UPPERCASE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Single-Characte Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_TEXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 80</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

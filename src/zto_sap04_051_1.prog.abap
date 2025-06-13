@@ -1,9 +1,9 @@
 *&---------------------------------------------------------------------*
-*& Report ZTO_SAP04_051
+*& Report ZTO_SAP04_051_1
 *&---------------------------------------------------------------------*
 *&
 *&---------------------------------------------------------------------*
-REPORT ZTO_SAP04_051.
+REPORT ZTO_SAP04_051_1.
 
 "Alternatif.
 
@@ -48,7 +48,7 @@ CLEAR: gs_structure.
 gs_structure-id      = 12346.
 gs_structure-name    = 'Murat'.
 gs_structure-surname = 'Öztürk'.
-gs_structure-job     = 'Engineer'.
+gs_structure-job     = 'Doctor'.
 gs_structure-salary  = 3400.
 gs_structure-curr    = 'EUR'.
 gs_structure-gsm     = '+90126543789'.
@@ -61,7 +61,7 @@ CLEAR: gs_structure.
 gs_structure-id      = 12347.
 gs_structure-name    = 'Meral'.
 gs_structure-surname = 'Öztürk'.
-gs_structure-job     = 'Engineer'.
+gs_structure-job     = 'Developer'.
 gs_structure-salary  = 3500.
 gs_structure-curr    = 'EUR'.
 gs_structure-gsm     = '+90126543789'.
@@ -73,7 +73,7 @@ CLEAR: gs_structure.
 gs_structure-id      = 12348.
 gs_structure-name    = 'Mert'.
 gs_structure-surname = 'Öztürk'.
-gs_structure-job     = 'Engineer'.
+gs_structure-job     = 'Nurse'.
 gs_structure-salary  = 3800.
 gs_structure-curr    = 'EUR'.
 gs_structure-gsm     = '+90126543789'.
@@ -85,7 +85,7 @@ CLEAR: gs_structure.
 gs_structure-id      = 12349.
 gs_structure-name    = 'Merve'.
 gs_structure-surname = 'Öztürk'.
-gs_structure-job     = 'Engineer'.
+gs_structure-job     = 'Artist'.
 gs_structure-salary  = 4000.
 gs_structure-curr    = 'EUR'.
 gs_structure-gsm     = '+90126543789'.
@@ -97,7 +97,7 @@ CLEAR: gs_structure.
 gs_structure-id      = 12350.
 gs_structure-name    = 'Merve'.
 gs_structure-surname = 'Öztürk'.
-gs_structure-job     = 'Engineer'.
+gs_structure-job     = 'Consultant'.
 gs_structure-salary  = 5000.
 gs_structure-curr    = 'EUR'.
 gs_structure-gsm     = '+90126543789'.
@@ -109,7 +109,7 @@ CLEAR: gs_structure.
 gs_structure-id      = 12351.
 gs_structure-name    = 'Merve'.
 gs_structure-surname = 'Öztürk'.
-gs_structure-job     = 'Engineer'.
+gs_structure-job     = 'Taxi Driver'.
 gs_structure-salary  = 5500.
 gs_structure-curr    = 'EUR'.
 gs_structure-gsm     = '+90126543789'.
@@ -133,7 +133,7 @@ CLEAR: gs_structure.
 gs_structure-id      = 12353.
 gs_structure-name    = 'Yasemin'.
 gs_structure-surname = 'Öztürk'.
-gs_structure-job     = 'Engineer'.
+gs_structure-job     = 'Autor'.
 gs_structure-salary  = 3500.
 gs_structure-curr    = 'EUR'.
 gs_structure-gsm     = '+90126543789'.
@@ -145,7 +145,7 @@ CLEAR: gs_structure.
 gs_structure-id      = 12354.
 gs_structure-name    = 'Yakup'.
 gs_structure-surname = 'Öztürk'.
-gs_structure-job     = 'Engineer'.
+gs_structure-job     = 'Repairman'.
 gs_structure-salary  = 7000.
 gs_structure-curr    = 'EUR'.
 gs_structure-gsm     = '+90126543789'.
@@ -154,72 +154,21 @@ gs_structure-e_mail  = 'muratozturk@gmail.com'.
 APPEND gs_structure TO gt_table.
 CLEAR: gs_structure.
 
-*READ TABLE gt_table into gs_structure INDEX 8.
-*
-*IF sy-subrc IS INITIAL.
-*  WRITE: gs_structure-id, gs_structure-name, gs_structure-salary.
-*
-*  ADD 500 TO gs_structure-salary.
-*
-**  gs_structure-salary = gs_structure-salary + 500.
-*
-*  MODIFY gt_table FROM gs_structure INDEX 8.
-*
-*  CLEAR: gs_structure.
-*
-*ENDIF.
-*
-*
-*READ TABLE gt_table into gs_structure INDEX 8.
-*
-*IF sy-subrc IS INITIAL.
-*
-*  WRITE: / gs_structure-id, gs_structure-name, gs_structure-salary.
-*ENDIF.
-
-*LOOP AT gt_table INTO gs_structure.
-*
-*  ADD 500 TO gs_structure-salary.
-*
-*  MODIFY gt_table FROM gs_structure INDEX sy-tabix.
-*
-*  WRITE: sy-tabix, gs_structure-id, gs_structure-name, gs_structure-salary.
-*
-*  SKIP.
-*
-*  CLEAR: gs_structure.
-*
-*ENDLOOP.
+*SORT gt_table BY id. " ASCENDING-Kücükten Büyüge
+SORT gt_table BY id DESCENDING.
 
 LOOP AT gt_table INTO gs_structure.
-
-  ADD 500 TO gs_structure-salary.
-
-  MODIFY gt_table FROM gs_structure TRANSPORTING salary WHERE id = gs_structure-id. "UPDATE ISLEMI
-
-  WRITE: sy-tabix, gs_structure-id, gs_structure-name, gs_structure-salary.
+  WRITE: gs_structure-id, gs_structure-name, gs_structure-job, gs_structure-salary.
 
   SKIP.
-
-  CLEAR: gs_structure.
-
 ENDLOOP.
-
-
-DELETE gt_table INDEX 8.
-DELETE gt_table INDEX 6.
-DELETE gt_table INDEX 4.
-DELETE gt_table INDEX 20.
-
-DELETE gt_table WHERE name = 'Yasemin'.
 
 ULINE.
 
+SORT gt_table BY name job ASCENDING.
+
 LOOP AT gt_table INTO gs_structure.
-  WRITE: sy-tabix, gs_structure-id, gs_structure-name, gs_structure-salary.
+  WRITE: gs_structure-id, gs_structure-name, gs_structure-job, gs_structure-salary.
+
   SKIP.
-
 ENDLOOP.
-
-
-*BREAK-POINT.
