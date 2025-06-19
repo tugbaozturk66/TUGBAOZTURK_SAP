@@ -14,7 +14,7 @@ START-OF-SELECTION.
 
 gv_result = 20.
 
-CLEAR: gv_result.
+*CLEAR: gv_result. " temizlememe gerek yok zaten fonksiyonu cagirinca orada gv ye yeni deger veriyoruz.
 
   CALL FUNCTION 'ZTO_FM_SAP04_02'
     EXPORTING

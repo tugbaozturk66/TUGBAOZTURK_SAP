@@ -30,7 +30,8 @@ DATA: gs_selopt_carrid TYPE gty_str_carrid,
       gs_selopt_connid TYPE gty_str_connid,
       gt_selopt_carrid TYPE RANGE OF s_carr_id,
       gt_selopt_connid TYPE RANGE OF s_conn_id,
-      gt_sflight       TYPE TABLE OF sflight.
+      gt_sflight       TYPE TABLE OF sflight,
+      gs_sflight       TYPE  sflight.
 
 
 START-OF-SELECTION.
@@ -86,14 +87,16 @@ FORM select_data .
     WHERE carrid IN gt_selopt_carrid
     AND   connid IN gt_selopt_connid.
 ENDFORM.
-*&---------------------------------------------------------------------*
-*&      Form  DISPLAY_DATA
-*&---------------------------------------------------------------------*
-*       text
-*----------------------------------------------------------------------*
-*  -->  p1        text
-*  <--  p2        text
-*----------------------------------------------------------------------*
+
 FORM display_data .
+  LOOP AT  gt_sflight into gs_sflight.
+    WRITE : gs_sflight-carrid,
+            gs_sflight-connid,
+            gs_sflight-fldate,
+            gs_sflight-price,
+            gs_sflight-planetype.
+    SKIP.
+
+  ENDLOOP.
 
 ENDFORM.

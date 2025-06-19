@@ -3,17 +3,16 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <PROGDIR>
-    <NAME>ZTO_SAP04_0121</NAME>
-    <SUBC>1</SUBC>
+    <NAME>ZTO_SAP04_0121_1_F01</NAME>
+    <SUBC>I</SUBC>
     <RLOAD>E</RLOAD>
-    <FIXPT>X</FIXPT>
     <UCCHECK>X</UCCHECK>
    </PROGDIR>
    <TPOOL>
     <item>
      <ID>R</ID>
-     <ENTRY>perform 5 encapsulation oncesi</ENTRY>
-     <LENGTH>30</LENGTH>
+     <ENTRY>Include ZTO_SAP04_0121_1_F01</ENTRY>
+     <LENGTH>28</LENGTH>
     </item>
    </TPOOL>
   </asx:values>

@@ -31,3 +31,16 @@ FORM sum.
   WRITE: lv_result.
 
 ENDFORM.
+
+*PERFORM sonuc .
+*
+*FORM sonuc .
+*  DATA : lv_sonuc TYPE i.
+*  lv_sonuc = p_1 + p_2 .
+**  WRITE : gv_sonuc.
+*
+*  ADD 10 To lv_sonuc .
+*  ADD 10 To lv_sonuc .
+*  WRITE : lv_sonuc .
+*
+*ENDFORM.

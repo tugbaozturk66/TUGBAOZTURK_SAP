@@ -38,11 +38,19 @@ START-OF-SELECTION.
 " ama eger aralikta istiyorsak BT yazarak low ve high kullaniyoruz yukaridaki gibi ve bir tane yeterli.
 *  gs_str_so-sign   = 'I'.
 *  gs_str_so-option = 'EQ'.
+*  gs_str_so-low    = p_carr_1.
+**gs_str_so-high   = 'I'.
+*
+*  APPEND gs_str_so TO gt_table_so.
+*  CLEAR: gs_str_so.
+*  gs_str_so-sign   = 'I'.
+*  gs_str_so-option = 'EQ'.
 *  gs_str_so-low    = p_carr_2.
 **gs_str_so-high   = 'I'.
 *
 *  APPEND gs_str_so TO gt_table_so.
 *  CLEAR: gs_str_so.
+
 
   SELECT * FROM spfli
     INTO TABLE gt_spfli

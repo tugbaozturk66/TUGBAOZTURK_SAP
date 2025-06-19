@@ -139,6 +139,207 @@
       </RSFDO>
      </DOCUMENTATION>
     </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_04</FUNCNAME>
+     <SHORT_TEXT>example 3</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_DEP_TIME</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>TIMS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ARR_TIME</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>TIMS</TYP>
+      </RSIMP>
+     </IMPORT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CS_SPFLI</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SPFLI</TYP>
+      </RSCHA>
+     </CHANGING>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_FLTIME</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>S_FLTIME</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_FLTIME_CHANGED</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>XFELD</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_DEP_TIME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Field of type TIMS</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ARR_TIME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Field of type TIMS</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FLTIME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flight time</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FLTIME_CHANGED</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CS_SPFLI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flight schedule</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_05</FUNCNAME>
+     <SHORT_TEXT>example 4</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_NUMBER_1</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_NUMBER_2</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>ZERO_DIVISION</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_NUMBER_1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_NUMBER_2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ZERO_DIVISION</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>bolen sifir olamaz</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_06</FUNCNAME>
+     <SHORT_TEXT>concatenate und lenght</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_TEXT_1</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR20</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_TEXT_2</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR20</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_TEXT_3</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR20</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_TEXT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>STRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_NO_CHAR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>NUM2</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_TEXT_1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 20</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_TEXT_2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 20</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_TEXT_3</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 20</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_TEXT</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_NO_CHAR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Numeric, 2-digit value</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_07</FUNCNAME>
+     <SHORT_TEXT>bookid kontrol</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_BOOKID</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>S_BOOK_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_SBOOK</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SBOOK</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_BOOKID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Booking number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_SBOOK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Single Flight Booking</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
    </FUNCTIONS>
   </asx:values>
  </asx:abap>

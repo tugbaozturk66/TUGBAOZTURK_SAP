@@ -30,4 +30,7 @@ START-OF-SELECTION.
 
   SELECT * FROM sflight INTO TABLE gt_sflight WHERE carrid IN gt_selopt_carrid.
 
+ cl_demo_output=>write( |=================sflight tablosu====================| ).
+ cl_demo_output=>display( gt_sflight ).
+
   BREAK-POINT.

@@ -18,52 +18,75 @@ DATA: gs_scarr   TYPE scarr,
       gt_spfli   TYPE TABLE OF spfli,
       gt_sflight TYPE TABLE OF sflight.
 
-SELECT-OPTIONS: so_car FOR gs_scarr-carrid.
+*SELECT-OPTIONS: so_car FOR gs_scarr-carrid.
+SELECT-OPTIONS so_carid FOr gs_scarr-carrid.
 
 START-OF-SELECTION.
 
   SELECT * FROM scarr
     INTO TABLE gt_scarr
-    WHERE carrid IN so_car.
+    WHERE carrid IN so_carid.
 
   SELECT * FROM spfli
     INTO TABLE gt_spfli
-    WHERE carrid IN so_car.
+    WHERE carrid IN so_carid.
 
   SELECT * FROM sflight
     INTO TABLE gt_sflight
-    WHERE carrid IN so_car.
+    WHERE carrid IN so_carid.
+
+*  LOOP AT gt_scarr INTO gs_scarr.
+*
+*    WRITE: gs_scarr-carrid,
+*           gs_scarr-carrname,
+*           gs_scarr-currcode,
+*           gs_scarr-url.
+*
+*    ULINE.
+*    SKIP.
+*
+*    LOOP AT gt_spfli INTO gs_spfli WHERE carrid = gs_scarr-carrid.
+*
+*      WRITE: / gs_spfli-carrid,
+*               gs_spfli-connid,
+*               gs_spfli-cityfrom,
+*               gs_spfli-cityto.
+*
+*
+*
+*      LOOP AT gt_sflight INTO gs_sflight WHERE carrid = gs_spfli-carrid AND connid = gs_spfli-connid.
+*
+*        WRITE: / gs_sflight-carrid,
+*                 gs_sflight-connid,
+*                 gs_sflight-planetype,
+*                 gs_sflight-price.
+*        ULINE.
+*      ENDLOOP.
+*
+*    ENDLOOP.
+*
+*    ULINE.
+*
+*  ENDLOOP.
 
   LOOP AT gt_scarr INTO gs_scarr.
+WRITE : gs_scarr-carrid,
+       gs_scarr-carrname.
+Skip.
+LOOP AT gt_spfli INTO gs_spfli where carrid = gs_scarr-carrid.
+  WRITE : gs_spfli-carrid,
+  gs_spfli-connid,
+  gs_spfli-fltime.
+  SKIP.
+  LOOP AT gt_sflight INTO gs_sflight where carrid = gs_spfli-carrid AND connid = gs_spfli-connid.
+  WRITE : gs_sflight-carrid,
+  gs_sflight-connid,
+  gs_sflight-price,
+  gs_sflight-currency.
+  SKIP.
+ULINE.
+ENDLOOP.
 
-    WRITE: gs_scarr-carrid,
-           gs_scarr-carrname,
-           gs_scarr-currcode,
-           gs_scarr-url.
-
-    ULINE.
-    SKIP.
-
-    LOOP AT gt_spfli INTO gs_spfli WHERE carrid = gs_scarr-carrid.
-
-      WRITE: / gs_spfli-carrid,
-               gs_spfli-connid,
-               gs_spfli-cityfrom,
-               gs_spfli-cityto.
-
-
-
-      LOOP AT gt_sflight INTO gs_sflight WHERE carrid = gs_spfli-carrid AND connid = gs_spfli-connid.
-
-        WRITE: / gs_sflight-carrid,
-                 gs_sflight-connid,
-                 gs_sflight-planetype,
-                 gs_sflight-price.
-        ULINE.
-      ENDLOOP.
-
-    ENDLOOP.
-
-    ULINE.
+ENDLOOP.
 
   ENDLOOP.
