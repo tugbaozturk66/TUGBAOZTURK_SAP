@@ -320,23 +320,11 @@
        <TYP>S_BOOK_ID</TYP>
       </RSIMP>
      </IMPORT>
-     <EXPORT>
-      <RSEXP>
-       <PARAMETER>ES_SBOOK</PARAMETER>
-       <REFERENCE>X</REFERENCE>
-       <TYP>SBOOK</TYP>
-      </RSEXP>
-     </EXPORT>
      <DOCUMENTATION>
       <RSFDO>
        <PARAMETER>IV_BOOKID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Booking number</STEXT>
-      </RSFDO>
-      <RSFDO>
-       <PARAMETER>ES_SBOOK</PARAMETER>
-       <KIND>P</KIND>
-       <STEXT>Single Flight Booking</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

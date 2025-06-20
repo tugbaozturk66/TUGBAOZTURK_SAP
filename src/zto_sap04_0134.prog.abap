@@ -21,32 +21,44 @@ DATA: gs_spfli       TYPE spfli,
 
 START-OF-SELECTION.
 
-  SELECT * FROM spfli
-    INTO TABLE gt_spfli
-    WHERE countryfr = p_1.
+*  SELECT * FROM spfli
+*    INTO TABLE gt_spfli
+*    WHERE countryfr = p_1.
+*
+*  LOOP AT gt_spfli INTO gs_spfli.
+*    APPEND gs_spfli TO gt_spfli_final.
+*    CLEAR: gs_spfli.
+*  ENDLOOP.
+*
+*  SELECT * FROM spfli
+*    INTO TABLE gt_spfli
+*    WHERE countryfr = p_2.
+*
+*  LOOP AT gt_spfli INTO gs_spfli.
+*    APPEND gs_spfli TO gt_spfli_final.
+*    CLEAR: gs_spfli.
+*  ENDLOOP.
+*
+*  SELECT * FROM spfli
+*    INTO TABLE gt_spfli
+*    WHERE countryfr = p_3.
+*
+*  LOOP AT gt_spfli INTO gs_spfli.
+*    APPEND gs_spfli TO gt_spfli_final.
+*    CLEAR: gs_spfli.
+*  ENDLOOP.
 
+"===============kendi cozumum======================
+  SELECT * FROM spfli
+    INTO TABLE gt_spfli .
   LOOP AT gt_spfli INTO gs_spfli.
+IF gs_spfli-countryfr = p_1 OR gs_spfli-countryfr = p_2 OR gs_spfli-countryfr = p_3  .
     APPEND gs_spfli TO gt_spfli_final.
     CLEAR: gs_spfli.
+ENDIF.
   ENDLOOP.
 
-  SELECT * FROM spfli
-    INTO TABLE gt_spfli
-    WHERE countryfr = p_2.
 
-  LOOP AT gt_spfli INTO gs_spfli.
-    APPEND gs_spfli TO gt_spfli_final.
-    CLEAR: gs_spfli.
-  ENDLOOP.
-
-  SELECT * FROM spfli
-    INTO TABLE gt_spfli
-    WHERE countryfr = p_3.
-
-  LOOP AT gt_spfli INTO gs_spfli.
-    APPEND gs_spfli TO gt_spfli_final.
-    CLEAR: gs_spfli.
-  ENDLOOP.
 
   SELECT * FROM sflight
     INTO TABLE gt_sflight
