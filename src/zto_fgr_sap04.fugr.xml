@@ -328,6 +328,396 @@
       </RSFDO>
      </DOCUMENTATION>
     </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_08</FUNCNAME>
+     <SHORT_TEXT>alistirma 15</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_NO</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>NUMC1</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_DAY</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR15</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>WRONG_NUMBER</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_NO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Num1</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_DAY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 15</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>WRONG_NUMBER</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Wrong day number</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_09</FUNCNAME>
+     <SHORT_TEXT>alistirma 16</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_CARRID</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>S_CARR_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_SPFLI</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTO_SAP04__TT_3</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_CARRID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Airline Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SPFLI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>TT spfli</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_10</FUNCNAME>
+     <SHORT_TEXT>alistirma 17</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_CARRN</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTO_SAP04_DE_CARRNAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_SCARR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SCARR</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_SPFLI</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTO_SAP04__TT_3</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_SFLIGHT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTO_SAP04__TT_4</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_CARRN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Airline name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_SCARR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Airline</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SPFLI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>TT spfli</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SFLIGHT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>TT sflight</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_11</FUNCNAME>
+     <SHORT_TEXT>alistirma 18</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_CARRID</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>S_CARR_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_SCARR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTO_SAP04__TT_5</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_DATA</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_CARRID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Airline Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SCARR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>TT scarr</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>nothing selected</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_12</FUNCNAME>
+     <SHORT_TEXT>alistirma 19</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_SYMBOL</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_NUMBER1</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_NUMBER2</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>SIFIRA_BOLME_ISLEMI</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>BOS_ISLEM_SEMBOLU</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>YANLIS_ISLEM_SEMBOLU</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_SYMBOL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Single-Character Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_NUMBER1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_NUMBER2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_RESULT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SIFIRA_BOLME_ISLEMI</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>sifira bolme islemi</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>BOS_ISLEM_SEMBOLU</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>bos islem sembolu</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>YANLIS_ISLEM_SEMBOLU</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>yanlis islem sembolu</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_13</FUNCNAME>
+     <SHORT_TEXT>alistirma 20</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_DAY</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR15</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_NUMBER</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_DAY</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR15</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>YANLIS_GUN</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_DAY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 15</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_NUMBER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_DAY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 15</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>YANLIS_GUN</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>yanlis gun</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_14</FUNCNAME>
+     <SHORT_TEXT>hotspot</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_DISTANCE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>S_DISTANCE</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_ANSWER</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>EV_DISTANCE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Distance</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_ANSWER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Single-Character Flag</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_15</FUNCNAME>
+     <SHORT_TEXT>sy 200 alistirma 5</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_URL</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>S_URL</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_ANS</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>EV_URL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Travel agency homepage URL</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_ANS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Single-Character Flag</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_16</FUNCNAME>
+     <SHORT_TEXT>alistirma 6</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_STRAVELAG</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTO_STRAVELAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_ANSWER</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_STRAVELAG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Travel agency</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_ANSWER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Single-Character Flag</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZTO_FM_SAP04_17</FUNCNAME>
+     <SHORT_TEXT>alistirma 9</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Single-Character Flag</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
    </FUNCTIONS>
   </asx:values>
  </asx:abap>
